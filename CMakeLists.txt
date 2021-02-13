@@ -29,6 +29,10 @@ add_executable(shared_timed
   ${CMAKE_CURRENT_SOURCE_DIR}/src/shared_timed.cpp
   )
 
+add_executable(posix
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/posix.cpp
+  )
+
 #include_directories(
 #  "${CMAKE_CURRENT_SOURCE_DIR}/src"
 #)
@@ -36,3 +40,4 @@ add_executable(shared_timed
 target_link_libraries(condition pthread)
 target_link_libraries(shared pthread)
 target_link_libraries(shared_timed pthread)
+target_link_libraries(posix pthread)
