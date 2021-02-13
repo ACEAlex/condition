@@ -47,8 +47,10 @@ int main(int argc, char** argv)
 
     std::cout << "Starting thread1" << std::endl;
     std::thread thread1(shared_poller, std::ref(f), 1);
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
     std::cout << "Starting thread2" << std::endl;
     std::thread thread2(shared_poller, std::ref(f), 2);
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
     std::cout << "Starting thread3" << std::endl;
     std::thread thread3(shared_releaser, std::ref(f));
 
